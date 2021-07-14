@@ -1,0 +1,2 @@
+rootProject.name = "homevork_ConstraintLayout_calculator_1"
+include ':app'
