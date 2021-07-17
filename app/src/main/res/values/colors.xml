@@ -2,12 +2,8 @@
 <resources>
     <color name="colorAcDel">#ffffff</color>
     <color name="colorMathematicalOperators">#FFC107</color>
-
     <color name="DisplayColor">#673AB7</color>
     <color name="buttonColorAcDel">#673AB7</color>
-
-
-
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
