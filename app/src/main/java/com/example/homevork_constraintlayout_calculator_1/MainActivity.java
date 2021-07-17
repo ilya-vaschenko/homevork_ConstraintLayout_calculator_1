@@ -10,8 +10,11 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText calculation, result;
     private String curr, res;
-    private Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, division, multiplication, subtraction, equally, addition, del, ac, dot;
+    private Button  division, multiplication, subtraction, equally, addition, del, ac, dot;
     private boolean dot_inserted, operator_inserted;
+
+    private final int[] numberButtonIds = new int[]{R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3,
+            R.id.btn4, R.id.btn5, R.id.btn6, R.id.btn7, R.id.btn8, R.id.btn9};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,22 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
         calculation = (EditText) findViewById(R.id.calculation);
         result = (EditText) findViewById(R.id.result);
-
         curr = "";
         res = "";
         dot_inserted = false;
         operator_inserted = false;
-
-        btn0 = (Button) findViewById(R.id.btn0);
-        btn1 = (Button) findViewById(R.id.btn1);
-        btn2 = (Button) findViewById(R.id.btn2);
-        btn3 = (Button) findViewById(R.id.btn3);
-        btn4 = (Button) findViewById(R.id.btn4);
-        btn5 = (Button) findViewById(R.id.btn5);
-        btn6 = (Button) findViewById(R.id.btn6);
-        btn7 = (Button) findViewById(R.id.btn7);
-        btn8 = (Button) findViewById(R.id.btn8);
-        btn9 = (Button) findViewById(R.id.btn9);
         dot = (Button) findViewById(R.id.dot);
         multiplication = (Button) findViewById(R.id.multiplication);
         division = (Button) findViewById(R.id.division);
@@ -44,91 +35,11 @@ public class MainActivity extends AppCompatActivity {
         equally = (Button) findViewById(R.id.equally);
         del = (Button) findViewById(R.id.del);
         ac = (Button) findViewById(R.id.ac);
-
-        btn0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                curr = curr + "0";
-                displayOne();
-            }
-        });
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                curr = curr + "1";
-                displayOne();
-            }
-        });
-
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                curr = curr + "2";
-                displayOne();
-            }
-        });
-
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                curr = curr + "3";
-                displayOne();
-            }
-        });
-
-        btn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                curr = curr + "4";
-                displayOne();
-            }
-        });
-
-        btn5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                curr = curr + "5";
-                displayOne();
-            }
-        });
-
-        btn6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                curr = curr + "6";
-                displayOne();
-            }
-        });
-
-        btn7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                curr = curr + "7";
-                displayOne();
-            }
-        });
-
-        btn8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                curr = curr + "8";
-                displayOne();
-            }
-        });
-
-        btn9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                curr = curr + "9";
-                displayOne();
-            }
-        });
+        setNumberButtonListeners();
 
         dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // check if its => append "0." and dot_inserted variable to true
                 if(curr.isEmpty()) {
                     curr ="0.";
                     dot_inserted = true;
@@ -281,6 +192,16 @@ public class MainActivity extends AppCompatActivity {
             }else {
                 curr = curr.substring(0,curr.length() - 1);
             }
+        }
+    }
+
+    private void setNumberButtonListeners() {
+        for (int i = 0; i < numberButtonIds.length; i++) {
+            findViewById(numberButtonIds[i]).setOnClickListener(v -> {
+                Button btn = (Button)v;
+                curr = curr + btn.getText().toString();
+                displayOne();
+            });
         }
     }
 }
