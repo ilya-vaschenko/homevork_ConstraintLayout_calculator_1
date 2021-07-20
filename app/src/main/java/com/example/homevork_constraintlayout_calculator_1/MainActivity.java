@@ -11,14 +11,14 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String NAME_SHARED_PREFERENCE = "LOGIN";
+    /*private static final String NAME_SHARED_PREFERENCE = "LOGIN";
 
     private static final String appTheme = "APP_THEME";
 
     private static final int MyCoolCodeStyle = 0;
     private static final int AppThemeLightCodeStyle = 1;
     private static final int AppThemeCodeStyle = 2;
-    private static final int AppThemeDarkCodeStale = 3;
+    private static final int AppThemeDarkCodeStale = 3;*/
 
     private EditText calculation, result;
     private String curr, res;
@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        int currentThemeCode = getCodeStyle();
+        /*int currentThemeCode = getCodeStyle();
         int currentThemeResID = codeStyleToStyleId(currentThemeCode);
-        setTheme(currentThemeResID);
+        setTheme(currentThemeResID);*/
 
         setContentView(R.layout.activity_main);
 
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         del = (Button) findViewById(R.id.del);
         ac = (Button) findViewById(R.id.ac);
         setNumberButtonListeners();
-        initRadioButtons();
+        /*initRadioButtons();*/
 
         topic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private int getCodeStyle() {
+    /*private int getCodeStyle() {
         SharedPreferences preferences = getSharedPreferences(NAME_SHARED_PREFERENCE, MODE_PRIVATE);
         return preferences.getInt(appTheme,MyCoolCodeStyle);
     }
@@ -240,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
             setAppTheme(AppThemeCodeStyle);
             recreate();
         });
-    }
+    }*/
 
     // дисплей где пишется пример
     public void displayOne() {
