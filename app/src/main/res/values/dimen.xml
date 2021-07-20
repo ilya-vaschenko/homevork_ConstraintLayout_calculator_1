@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="screenHeight">90dp</dimen>
-    <dimen name="buttonWidthAcDel">200dp</dimen>
+    <dimen name="buttonWidthAcDel">133dp</dimen>
     <dimen name="buttonHeightAcDel">80dp</dimen>
     <dimen name="displayTextSize">50dp</dimen>
     <dimen name="leftMarginIndent">5dp</dimen>
     <dimen name="textSize">30sp</dimen>
-    <dimen name="textSizeAcDel">20sp</dimen>
+    <dimen name="textSizeAcDel">15sp</dimen>
 </resources>
